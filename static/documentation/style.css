@@ -1,0 +1,413 @@
+/* Reset & global */
+body {
+    margin: 0;
+    font-family: "Inter", Helvetica, sans-serif;
+    color: #333;
+    -webkit-font-smoothing: antialiased;
+    padding-top: 48px;
+}
+
+.site-wrapper{
+    max-width: 1400px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+a { 
+    text-decoration: none; 
+}
+
+/* Top nav - CORRIGÉ */
+.en-haut {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    /* background-color: #133e56; */
+    width: 100%;
+}
+
+.documentation {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: #133e56;
+    height: 48px;
+    width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.documentation a {
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-left: 18px;
+}
+
+.menu-btn {
+    display: none;
+    margin-left: auto;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.seach {
+    display: block;
+    height: calc(1.9em + .75rem + 2px);
+    font-size: 1rem;
+    font-weight: 400;
+    color: #495057;
+    background-color: #fff;
+    position: relative;
+    width: auto;
+    top: 0;
+    padding-left: 10px;
+    flex: 1;
+    max-width: 1140px;
+}
+
+.seach input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+}
+
+.icon i {
+    padding: 5px;
+    color: #4BAEB4;
+}
+
+.point {
+    color: #4BAEB4;
+    text-decoration: none;
+    margin-left: -0px;
+}
+
+.point:hover {
+    text-decoration: none;
+    color: #1a5c7d;
+}
+
+/* Sidebar */
+.tout { 
+    display: flex;
+     font-size: 95%;
+}
+
+.chapitre {
+    width: 250px;
+    background-color: #133e56;
+    position: fixed;
+    top: 48px;
+    bottom: 0;
+    overflow-y: auto;
+    padding-top: 0.5rem;
+    z-index: 900;
+}
+
+.chapitre a {
+    display: block;
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    padding: 0.75rem 1rem;
+    border-left: 3px solid transparent;
+    font-size: 0.95rem;
+}
+
+.chapitre a:hover {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.chapitre a.active { 
+    background-color: #4BAEB4;
+    transition: all ease-in-out 0.25s;
+    border-radius: 0 99px 99px 0; 
+    margin-right: 20px;
+    color: white;
+}
+
+/* Cacher le sous-menu dans la sidebar par défaut */
+.chapitre .sub-menu {
+    display: none;
+}
+
+/* Afficher le sous-menu seulement pour le chapitre 3 actif */
+.chapitre .nav-link[data-chapter="api-rest"].active ~ .sub-menu {
+    display: block;
+}
+
+.sub-link {
+    font-size: 0.9rem; 
+    padding-left: 1.5rem; 
+    color: #cce0e5;
+    display: block;
+}
+
+.sub-link:hover {
+    color: white;
+}
+
+.sub-link.active {
+    background-color: #4BAEB4;
+    color: white;
+    border-radius: 0 99px 99px 0;
+    margin-right: 20px;
+}
+
+/* Main content */
+.centre {
+    margin: 0 auto;
+   max-width: 1400px;
+    /* width: 80%; */
+    margin-left: 250px;
+    /* margin-right: 1rem; */
+    line-height: 1.5;
+    padding: 1rem 0;
+    position: fixed;
+    overflow: auto;
+    height: 100%;
+     background-color: #f2f7f8;
+   
+}
+
+.section {
+    margin: 0 auto 2rem auto;
+    border-radius: 8px;
+    display: none;
+    margin-top: -1rem;
+    width: 100%;
+    margin-left: 60px;
+}
+
+.section.active {
+    display: block;
+    width: 80%;
+    margin-bottom: 150px;
+}
+
+.sub-content {
+    margin-left: 2rem;
+}
+
+img {
+    width: 70%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    margin: 10px 0;
+}
+
+ .follow{
+    margin-left: -80%;
+    color: #1a5c7d;
+    text-decoration: none;
+    font-size: 110%;
+}
+
+.suiv:hover {
+    text-decoration: underline;
+}
+
+.suiv {
+    margin-left: 0%;
+    color: #1a5c7d;
+    text-decoration: none;
+    font-size: 110%;
+}
+
+.follow:hover {
+    text-decoration: underline;
+}
+
+.dessus {
+    margin-top: 2px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 70px;
+}
+
+.batto{
+    margin-bottom: 500px;
+}
+
+.lien { 
+    color: #4BAEB4; 
+    font-size: 150%; 
+    margin-left: 18%;
+    text-decoration: none;
+}
+
+.lien:hover {
+    color: #1a5c7d;
+    text-decoration: underline;
+}
+
+.border {
+     border-bottom: 2px solid #4BAEB4;
+    padding: 10px 0;
+    margin: 20px 0;
+}
+
+.marge {
+    margin-bottom: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body {
+        padding-top: 40px;
+    }
+    
+    .en-haut {
+        flex-direction: column;
+        height: auto;
+    }
+    
+    .documentation {
+        width: 100%;
+        justify-content: space-between;
+        height: 40px;
+        padding: 0 1rem;
+    }
+    
+    .menu-btn {
+        display: block;
+    }
+    
+    .seach {
+        width: 100%;
+        margin-left: 0;
+        top: 0;
+        height: 40px;
+        position: relative;
+    }
+    
+    .tout {
+        flex-direction: column;
+    }
+    
+    .chapitre {
+        position: fixed;
+        width: 100%;
+        top: 80px;
+        max-height: calc(100vh - 80px);
+        display: none;
+        z-index: 1000;
+        background-color: #133e56;
+        overflow-y: auto;
+    }
+    
+    .chapitre.show {
+        display: block;
+    }
+    
+    /* Sur mobile, le sous-menu ne s'affiche JAMAIS dans le menu */
+    .chapitre .sub-menu {
+        display: none !important;
+    }
+    
+    .centre {
+        margin-left: 1rem;
+        /* margin-right: 1rem; */
+        width: calc(100%);
+        margin-top: 2rem;
+        /* margin-left: 0; */
+    }
+    
+    .section {
+        margin-left: 0;
+        width: 100%;
+    }
+    .section.active {
+        margin-left: 15px;
+        width: 90%;
+    }
+
+    
+    img {
+        width: 100%;
+    }
+    
+    .suiv {
+        margin-left: 0;
+        display: block;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    
+    .follow {
+        margin-left: 0;
+        display: block;
+        text-align: center;
+    }
+    
+    .dessus {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .lien {
+        margin-left: 0;
+        font-size: 120%;
+        display: block;
+        text-align: center;
+    }
+}
+
+/* Styles pour les listes */
+ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+ul li {
+    margin: 5px 0;
+}
+
+/* Styles pour les titres */
+h2 {
+    color: #133e56;
+    padding-bottom: 10px;
+    margin-top: 20px;
+}
+
+/* Styles pour le contenu des sous-sections */
+.sub-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin: 20px 0;
+}
+
+/* Animation pour le menu */
+.chapitre {
+    transition: transform 0.3s ease-in-out;
+}
+
+@media (max-width: 768px) {
+    .chapitre {
+        transform: translateX(-100%);
+    }
+    
+    .chapitre.show {
+        transform: translateX(0);
+    }
+}

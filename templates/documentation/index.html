@@ -1,0 +1,218 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation SMS</title>
+     <link rel="stylesheet" href="{% static 'documentation/style.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <div class="site-wrapper">
+        <nav class="en-haut">
+            <div class="documentation">
+                <a href="#intro" class="nav-link docm" data-chapter="intro">Documentation</a>
+                <button id="menu-btn" class="menu-btn"><i class="bi bi-list"></i></button>
+            </div>
+            
+            <div class="seach">
+                <div class="icon">
+                    <i class="bi bi-search"></i>
+                    <input type="text" id="searchInput" placeholder="Search">
+                </div>
+            </div>
+        </nav>
+
+        <div class="tout">
+            <!-- Sidebar -->
+            <div class="chapitre">
+                <a href="#intro" class="nav-link active chapter-link" data-chapter="intro">Chapitre 1 : Introduction</a>
+                <a href="#web-admin" class="nav-link chapter-link" data-chapter="web-admin">Chapitre 2 : Interface Web Admin</a>
+                <a href="#api-rest" class="nav-link chapter-link" data-chapter="api-rest">Chapitre 3 : API REST</a>
+
+                <div class="sub-menu">
+                    <a href="#gestion-utilisateur" class="sub-link" data-target="gestion-utilisateur">1.1-Gestion Utilisateur</a>
+                    <a href="#gestion-plans" class="sub-link" data-target="gestion-plans">1.2-Gestion des Plans</a>
+                    <a href="#gestion-abonnements" class="sub-link" data-target="gestion-abonnements">1.3-Gestion des Abonnements</a>
+                    <a href="#gestion-messages" class="sub-link" data-target="gestion-messages">1.4-Gestion des Messages</a>
+                </div>
+            </div>
+
+            <!-- Contenu central -->
+            <div class="centre" id="content">
+                <!-- Chapitre 1 -->
+                <div id="intro" class="section active">
+                    <p><a href="#intro" class="point">Homepage</a> <i class="bi bi-chevron-double-right"></i> Chapitre 1</p>
+                    <h2>Chapitre 1 : Introduction</h2>
+                    <p>L'API SMS est une plateforme complète de gestion et d'envoi de messages SMS qui offre deux interfaces principales :</p>
+                    <ul>
+                        <li>Interface Web</li>
+                        <li>API REST :Pour l'intégration avec des applications tierces.</li>
+                    </ul>
+                    <p>L'API est composé principalement de la :</p>
+                    <ul>
+                        <li>➔ Gestion des Utilisateurs : Authentification et gestion des profils</li>
+                        <li>➔ Plans SMS : Gestion des crédits et des marques (brand names)</li>
+                        <li>➔ Messages : Création, traitement et envoi des SMS</li>
+                        <li>➔ Abonnements : Recharge des crédits pour les plans</li>
+                    </ul>
+                    <div class="border">
+                        <p class="marge">L'utilisateur commence par se connecter sur la plateforme. Ensuite, il fait une demande de plan SMS en choisissant un brand name unique; le plan est initialement en statut <strong>PENDING</strong> et devient <strong>ACTIVE</strong> après validation par l'administrateur. Une fois le plan actif, l'administrateur peut créer un abonnement et ajouter des crédits au plan, mettant ainsi à jour la balance disponible pour l'envoi de SMS. Avec un plan actif et des crédits disponibles, l'utilisateur peut alors procéder à l'envoi de ses messages via l'API.</p>
+                    </div>
+                    <div class="dessus">
+                        <a class="suiv" href="#web-admin" data-chapter="web-admin">Chapitre2: Interface Web Admin➔</a>
+                    </div>
+                </div>
+
+                <!-- Chapitre 2 -->
+                <div id="web-admin" class="section">
+                    <h2>Chapitre 2 : Interface Web Admin</h2>
+                    <p>L'interface Web Admin est l'outil principal pour les administrateurs de la plateforme SMS. Elle permet de gérer tous les aspects de l'application.</p>
+                    <p>
+                        <ul>
+                            <li>➔ Se connecter</li>
+                        </ul>
+                    </p>
+                    <p>Pour se connecter, on entre les identifiants que le gestionnaire de l'application nous a donnés.</p>
+                    <img src="{% static 'documentation/images/image1.png' %}" alt="image">
+                    <p>
+                        <ul>
+                            <li>➔ Interface d'administration</li>
+                        </ul>
+                    </p>
+                    <p>Voici à quoi ressemble une interface d'administration</p>
+                    <img src="{% static 'documentation/images/image2.png' %}" alt="image">
+                    <p>
+                        <ul>
+                            <li>➔ Consultation utilisateur et Changement de mot de passe</li>
+                        </ul>
+                    </p>
+                    <p>Pour consulter ses données d'utilisateur, on clique sur la ligne utilisateur.</p>
+                    <img src="{% static 'documentation/images/image3.png' %}" alt="image">
+                    <p>Pour modifier son mot de passe, on peut cliquer sur le mot "ce formulaire" écrit en couleur.</p>
+                    <img src="{% static 'documentation/images/image4.png' %}" alt="image">
+                    <p>
+                        <ul>
+                            <li>➔ Création et Consultation plan</li>
+                        </ul>
+                    </p>
+                    <p>Pour créer un nouveau plan ou consulter les données des différents plans que l'on possède, on clique sur la ligne Plans.</p>
+                   <img src="{% static 'documentation/images/image5.png' %}" alt="image">
+                    <p>Quand on crée un nouveau plan, on choisit l'utilisateur auquel on veut attribuer ce plan, on entre un brand name unique qui sera validé et utilisé lors des envois des messages après validation.</p>
+                    <img src="{% static 'documentation/images/image6.png' %}" alt="image6">
+                    <p>
+                        <ul>
+                            <li>➔ Création et Consultation message</li>
+                        </ul>
+                    </p>
+                    <p>Pour créer un nouveau message ou consulter les données des différents messages que l'on a envoyés, on clique sur la ligne Messages.</p>
+                    <img src="{% static 'documentation/images/image7.png' %}" alt="image7">
+                    <p>Pour créer un message, il faut entrer trois données :</p>
+                    <ul>
+                        <li>- le récipient number : qui contiendra les différents numéros auquel on veut envoyer un message</li>
+                        <li>- le content : qui contiendra le message que vous voulez envoyer aux correspondants</li>
+                        <li>- le brand name : qui contiendra votre nom de marque qui a été validé dans l'url plan</li>
+                    </ul>
+                    <img src="{% static 'documentation/images/image8.png' %}" alt="i">
+                    <p>Quand un message n'a pas été envoyé, il peut être supprimé. L'envoi de messages unique permet d'envoyer un contenu à un seul destinataire. L'envoi de messages multiples permet de diffuser le même contenu à plusieurs destinataires simultanément.</p> 
+                    <div class="border">
+                        <p class="marge"><img src="{% static 'documentation/images/image9.png' %}" alt="image9"></p>
+                    </div>
+                    <div class="dessus">
+                        <a class="suiv" href="#intro" data-chapter="intro">←Chapitre1: Introduction </a>
+                        <a class="follow" href="#api-rest" data-chapter="api-rest">Chapitre3: API REST➔</a>
+                    </div>
+                </div>
+
+                <!-- Chapitre 3 -->
+                <div id="api-rest" class="section">
+                    <h2>Chapitre 3 : API REST</h2>
+                    <p>L'API REST permet aux développeurs d'intégrer la plateforme SMS dans leurs applications. Elle offre des endpoints sécurisés pour toutes les opérations de gestion et d'envoi de messages.</p>
+                    <img src="{% static 'documentation/images/image10.png' %}" alt=""> <br>
+                    <div class="border">
+                        <p class="marge">
+                            <a class="lien" href="#gestion-utilisateur" data-target="gestion-utilisateur">3.1-Gestion utilisateur</a> <br><br>
+                            <a class="lien" href="#gestion-plans" data-target="gestion-plans">3.2-Gestion des plans</a> <br><br>
+                            <a class="lien" href="#gestion-abonnements" data-target="gestion-abonnements">3.3-Gestion des Abonnements</a> <br><br>
+                            <a class="lien" href="#gestion-messages" data-target="gestion-messages">3.4-Gestion des messages</a> <br><br>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Sous-sections Chapitre 3 -->
+                <div id="gestion-utilisateur" class="sub-content" style="display:none;">
+                    <h2>Gestion Utilisateur</h2>
+                    <img src="image11.png" alt="">
+                    <ul>
+                        <li>◆ Génération de Token - Endpoint : POST /api/users/generate-token/</li>
+                        <li>◆ Changement de Mot de Passe - Endpoint : POST /api/users/changepassword/</li>
+                        <li>◆ Révocation de Token - Endpoint : POST /api/users/blacklist_token/</li>
+                    </ul>
+                    <div class="border">
+                        <p class="marge"><img src="{% static 'documentation/images/image12.png' %}" alt=""></p>
+                    </div>
+                    <div class="dessus">
+                        <a class="suiv" href="#api-rest" data-chapter="api-rest">←Chapitre3:API REST</a>
+                        <a class="follow" href="#gestion-plans" data-target="gestion-plans">Gestion des Plans➔</a> 
+                    </div>
+                </div>
+
+                <div id="gestion-plans" class="sub-content" style="display:none;">
+                    <ul>
+                        <li>◆ Consultation des Plans - Endpoint : GET /api/plans/</li>
+                        <li>◆ Création d'un Plan - Endpoint : POST /api/plans/</li>
+                    </ul>
+                    <img src="{% static 'documentation/images/image13.png' %}" alt="">
+                    <img src="{% static 'documentation/images/imageA13.png' %}" alt="">
+                    <div class="border">
+                        <p class="marge">★ Body schema: application/json ...</p>
+                    </div>
+                    <div class="dessus">
+                        <a class="suiv" href="#gestion-utilisateur" data-target="gestion-utilisateur">←Gestion Utilisateur</a>
+                        <a class="follow" href="#gestion-abonnements" data-target="gestion-abonnements">Gestion des Abonnements➔</a>
+                    </div>
+                </div>
+
+                <div id="gestion-abonnements" class="sub-content" style="display:none;">
+                    <ul>
+                        <li>◆ Consultation des Abonnements - Endpoint : GET /api/abonnement/</li>
+                    </ul>
+                    
+                    <div class="border">
+                        <p class="marge"><img src="{% static 'documentation/images/image14.png' %}" alt=""></p>
+                    </div>
+                    <div class="dessus">
+                        <a class="suiv" href="#gestion-plans" data-target="gestion-plans">←Gestion des Abonnements</a>
+                        <a class="follow" href="#gestion-messages" data-target="gestion-messages">Gestion des messages➔</a>
+                    </div>
+                </div>
+
+                <div id="gestion-messages" class="sub-content" style="display:none;">
+                    <ul>
+                        <li>◆ Consultation des messages - Endpoint : GET /api/messages/</li>
+                        <li>◆ Envoi de Message Unique - Endpoint : POST /api/messages/</li>
+                        <li>◆ Envoi de Messages Multiples - Endpoint : POST /api/messages/</li>
+                        <li>◆ Suppression de Message non encore envoyé - Endpoint : DELETE /api/messages/{id}</li>
+                    </ul>
+                    <img src="{% static 'documentation/images/image15.png' %}" alt="">
+                    <img src="{% static 'documentation/images/image16.png' %}" alt="">
+                    <img src="{% static 'documentation/images/image17.png' %}"alt="">
+                    <div class="border">
+                        <p class="marge"><img src="{% static 'documentation/images/image18.png' %}" alt=""></p>
+                    </div>
+                    <div class="dessus">
+                        <a class="suiv" href="#gestion-abonnements" data-target="gestion-abonnements">←Gestion des Abonnements</a>
+                        <a class="follow" href="#intro" data-chapter="intro">Chapitre1➔</a> 
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPT -->
+    <script src="{% static 'documentation/script.js' %}"> </script>
+</body>
+</html>
